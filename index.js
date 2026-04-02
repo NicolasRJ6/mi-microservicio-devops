@@ -4,7 +4,7 @@ const PORT = 3000;
 
 app.get('/', (req, res) => {
   res.json({ 
-    mensaje: "¡Hola! Este es mi microservicio para la clase de DevOps",
+    mensaje: "nico: Este es mi microservicio para la clase de DevOps",
     estado: "En funcionamiento",
     clase: "Ingeniería DevOps - Evaluación 1"
   });
