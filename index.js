@@ -10,6 +10,10 @@ app.get('/', (req, res) => {
   });
 });
 
+app.get('/status', (req, res) => {
+  res.json({ status: "Operativo", uptime: process.uptime() });
+});
+
 app.listen(PORT, () => {
   console.log(`Microservicio corriendo en http://localhost:${PORT}`);
 });
