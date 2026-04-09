@@ -3,7 +3,7 @@ Para este proyecto hemos decidido implementar **GitFlow**
 **Justificación:**
 Elegimos GitFlow porque permite un entorno colaborativo estructurado al tener una rama `main` aislada, aseguramos que el código de producción siempre sea estable la rama `develop` sirve como punto de integración para todo el equipo las ramas `feature/` nos permiten trabajar en paralelo sin pisarnos el código, y las ramas `hotfix/` nos dan una vía rápida para solucionar errores críticos en producción sin interrumpir el desarrollo de nuevas características
 
-## Convenciones y Buenas Prácticas del Equipo
+## Convenciones
 
 ###  Naming de Ramas
    **main**: Código estable para producción
@@ -23,7 +23,7 @@ Utilizamos la convención de *Conventional Commits* para mantener la trazabilida
    Todo cambio debe integrarse mediante un **Pull Request (PR)**
    Antes de aprobar un PR, el código debe pasar exitosamente el pipeline de GitHub Actions (CI) y ser revisado por al menos 1 compañero de equipo 
 
-### 4. Estructura de Carpetas
+###  Estructura de Carpetas
    `.github/workflows/`: Archivos de configuración de GitHub Actions
    `/`: Archivos de configuración en la raíz (`package.json`, `.gitignore`)
    `/src/` o raíz: Lógica principal del microservicio (`index.js`)
