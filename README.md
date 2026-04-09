@@ -1,7 +1,3 @@
-# Mi Microservicio Devops
-
-## Estrategia de Ramificación y Control de Versiones
-
 Para este proyecto hemos decidido implementar **GitFlow**
 
 **Justificación:**
@@ -9,28 +5,28 @@ Elegimos GitFlow porque permite un entorno colaborativo estructurado al tener un
 
 ## Convenciones y Buenas Prácticas del Equipo
 
-### 1. Naming de Ramas
-*   **main**: Código estable para producción
-*   **develop**: Código de integración de desarrollo
-*   **feature/<nombre-breve>**: Para nuevas funcionalidades (Ej: `feature/login`, `feature/nueva-ruta`)
-*   **hotfix/<nombre-breve>**: Para errores críticos en main (Ej: `hotfix/caida-bd`)
+###  Naming de Ramas
+   **main**: Código estable para producción
+   **develop**: Código de integración de desarrollo
+   **feature/<nombre-breve>**: Para nuevas funcionalidades (Ej: `feature/login`, `feature/nueva-ruta`)
+   **hotfix/<nombre-breve>**: Para errores críticos en main (Ej: `hotfix/caida-bd`)
 
-### 2. Convenciones de Commits
+###  Convenciones de Commits
 Utilizamos la convención de *Conventional Commits* para mantener la trazabilidad:
-*   `feat: <descripción>` para nuevas características
-*   `fix: <descripción>` para solución de bugs
-*   `docs: <descripción>` para cambios en documentación
-*   `ci: <descripción>` para cambios en GitHub actions/flujos
+   `feat: <descripción>` para nuevas características
+   `fix: <descripción>` para solución de bugs
+   `docs: <descripción>` para cambios en documentación
+   `ci: <descripción>` para cambios en GitHub actions/flujos
 
-### 3. Flujo de Merge y Estrategias de Revisión
-*   **Nunca** se hace push directo a `main` ni a `develop`
-*   Todo cambio debe integrarse mediante un **Pull Request (PR)**
-*   Antes de aprobar un PR, el código debe pasar exitosamente el pipeline de GitHub Actions (CI) y ser revisado por al menos 1 compañero de equipo 
+###  Flujo de Merge y Estrategias de Revisión
+   **Nunca** se hace push directo a `main` ni a `develop`
+   Todo cambio debe integrarse mediante un **Pull Request (PR)**
+   Antes de aprobar un PR, el código debe pasar exitosamente el pipeline de GitHub Actions (CI) y ser revisado por al menos 1 compañero de equipo 
 
 ### 4. Estructura de Carpetas
-*   `.github/workflows/`: Archivos de configuración de GitHub Actions
-*   `/`: Archivos de configuración en la raíz (`package.json`, `.gitignore`)
-*   `/src/` o raíz: Lógica principal del microservicio (`index.js`)
+   `.github/workflows/`: Archivos de configuración de GitHub Actions
+   `/`: Archivos de configuración en la raíz (`package.json`, `.gitignore`)
+   `/src/` o raíz: Lógica principal del microservicio (`index.js`)
 
 ### Declaración de Uso de Inteligencia Artificial
 En este proyecto se utilizó IA (Google ia Studio) de manera ética como apoyo para estructurar el formato de este documento README.md, recordar comandos de Git y validar la sintaxis básica del archivo YAML para GitHub Actions todas las decisiones técnicas, la creación de las ramas, los commits y la ejecución de los Pull Requests fueron realizadas de forma manual
