@@ -1,15 +1,39 @@
-# Evaluación 1: Ingenieria DevOps - Mi Primer Pipeline
+# Mi Microservicio Devops
 
-## Modelo de Ramificacion: GitFlow
-Para este proyecto hemos seleccionado *GitFlow*.
-*Justificación:* Elegimos GitFlow porque permite una separación clara entre el código estable en `main` y el desarrollo activo en `develop` el uso de ramas `feature/` permite trabajar en nuevas funcionalidades sin afectar la estabilidad del sistema, cumpliendo con los estándares de trazabilidad y calidad exigidos
+## Estrategia de Ramificación y Control de Versiones
 
-## Convenciones del Proyecto
- *Naming de Ramas:* 
- Funcionalidades: `feature/nombre-tarea`
- Arreglos rapidos: `hotfix/nombre-error`
-*Mensajes de Commit:* Usamos *Conventional Commits* (ej: `feat:`, `fix:`, `docs:`).
- *Estrategia de Revisión:* Todo cambio debe pasar por un Pull Request (PR) de una rama `feature` hacia `develop`
+Para este proyecto hemos decidido implementar **GitFlow**
 
-## Automatización (CI/CD)
-Se ha configurado un workflow de *GitHub Actions* que se dispara automáticamente con cada `push` a la rama `develop` y con cada `Pull Request` hacia `main`
+**Justificación:**
+Elegimos GitFlow porque permite un entorno colaborativo estructurado al tener una rama `main` aislada, aseguramos que el código de producción siempre sea estable la rama `develop` sirve como punto de integración para todo el equipo las ramas `feature/` nos permiten trabajar en paralelo sin pisarnos el código, y las ramas `hotfix/` nos dan una vía rápida para solucionar errores críticos en producción sin interrumpir el desarrollo de nuevas características
+
+## Convenciones y Buenas Prácticas del Equipo
+
+### 1. Naming de Ramas
+*   **main**: Código estable para producción
+*   **develop**: Código de integración de desarrollo
+*   **feature/<nombre-breve>**: Para nuevas funcionalidades (Ej: `feature/login`, `feature/nueva-ruta`)
+*   **hotfix/<nombre-breve>**: Para errores críticos en main (Ej: `hotfix/caida-bd`)
+
+### 2. Convenciones de Commits
+Utilizamos la convención de *Conventional Commits* para mantener la trazabilidad:
+*   `feat: <descripción>` para nuevas características
+*   `fix: <descripción>` para solución de bugs
+*   `docs: <descripción>` para cambios en documentación
+*   `ci: <descripción>` para cambios en GitHub actions/flujos
+
+### 3. Flujo de Merge y Estrategias de Revisión
+*   **Nunca** se hace push directo a `main` ni a `develop`
+*   Todo cambio debe integrarse mediante un **Pull Request (PR)**
+*   Antes de aprobar un PR, el código debe pasar exitosamente el pipeline de GitHub Actions (CI) y ser revisado por al menos 1 compañero de equipo 
+
+### 4. Estructura de Carpetas
+*   `.github/workflows/`: Archivos de configuración de GitHub Actions
+*   `/`: Archivos de configuración en la raíz (`package.json`, `.gitignore`)
+*   `/src/` o raíz: Lógica principal del microservicio (`index.js`)
+
+### Declaración de Uso de Inteligencia Artificial
+En este proyecto se utilizó IA (Google ia Studio) de manera ética como apoyo para estructurar el formato de este documento README.md, recordar comandos de Git y validar la sintaxis básica del archivo YAML para GitHub Actions todas las decisiones técnicas, la creación de las ramas, los commits y la ejecución de los Pull Requests fueron realizadas de forma manual
+Fuente: https://bibliotecas.duoc.cl/ia
+
+Principalmente, lo que más me costó al inicio fue entender bien el flujo de las ramas y el orden de los commits al principio me confundía un poco al hacer los Pull Requests, los merge, y tratar de que no se me desordenara la rama main con la de develop y configurar el archivo YAML para las GitHub Actions fue un desafío, pero al apoyarme en la Inteligencia Artificial para resolver mis dudas puntuales, pude entender el proceso paso a paso, aprendiendo de forma mucho más rápida y guiada
