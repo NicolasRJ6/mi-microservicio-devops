@@ -34,7 +34,6 @@ Utilizamos la convención de *Conventional Commits* para mantener la trazabilida
 
 ### Declaración de Uso de Inteligencia Artificial
 
-=======
 Para este proyecto hemos decidido implementar **GitFlow**
 
 **Justificación:**
@@ -82,10 +81,10 @@ Para asegurar la calidad y trazabilidad desde el desarrollo hasta la producción
   
 ## Arquitectura y Decisiones Técnicas (Evaluación 2)
 Para esta etapa, hemos escalado el microservicio integrando prácticas avanzadas de DevOps:
-* **Contenedorización:** Se creó un `Dockerfile` optimizado utilizando la imagen `node:18-alpine` para reducir el peso y mejorar la seguridad. El puerto interno configurado es el 8080.
-* **Orquestación Simulada:** Mediante `docker-compose.yml`, simulamos un entorno Cloud que levanta el servicio de forma aislada, asegurando que "funcione en mi máquina y en producción de la misma manera".
+* **Contenedorización:** Se creó un `Dockerfile` optimizado utilizando la imagen `node:18-alpine` para reducir el peso y mejorar la seguridad. El puerto interno configurado es el 8080
+* **Orquestación Simulada:** Mediante `docker-compose.yml`, simulamos un entorno Cloud que levanta el servicio de forma aislada, asegurando que "funcione en mi máquina y en producción de la misma manera"
 * **Calidad de Código (QA):** Se implementó la librería `Jest` para ejecutar pruebas unitarias automáticas en el pipeline.
-* **Seguridad (SecOps):** Se activó `Dependabot` en GitHub y se integró `npm audit --audit-level=critical` en el flujo de Actions. Si se detecta un paquete malicioso, el despliegue se bloquea automáticamente protegiendo el entorno de producción.
+* **Seguridad (SecOps):** Se activó `Dependabot` en GitHub y se integró `npm audit --audit-level=critical` en el flujo de Actions. Si se detecta un paquete malicioso, el despliegue se bloquea automáticamente protegiendo el entorno de producción
 
 # Declaración de uso de Inteligencia Artificial (Evaluación 2):
 En esta etapa del proyecto, utilicé Inteligencia Artificial (Google ia Studio) de manera ética como apoyo técnico para generar la estructura base del Dockerfile, el archivo docker-compose.yml y para entender la sintaxis de los comandos de pruebas y seguridad (Jest y npm audit) dentro del archivo de GitHub Actions. Todas las implementaciones, pruebas de ejecución y resolución de conflictos en el repositorio fueron realizadas manualmente
