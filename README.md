@@ -34,6 +34,38 @@ Utilizamos la convención de *Conventional Commits* para mantener la trazabilida
 
 ### Declaración de Uso de Inteligencia Artificial
 
+=======
+Para este proyecto hemos decidido implementar **GitFlow**
+
+**Justificación:**
+Elegimos GitFlow porque permite un entorno colaborativo estructurado al tener una rama `main` aislada, aseguramos que el código de producción siempre sea estable la rama `develop` sirve como punto de integración para todo el equipo las ramas `feature/` nos permiten trabajar en paralelo sin pisarnos el código, y las ramas `hotfix/` nos dan una vía rápida para solucionar errores críticos en producción sin interrumpir el desarrollo de nuevas características
+
+## Convenciones
+
+###  Naming de Ramas
+   **main**: Código estable para producción
+   **develop**: Código de integración de desarrollo
+   **feature/<nombre-breve>**: Para nuevas funcionalidades (Ej: `feature/login`, `feature/nueva-ruta`)
+   **hotfix/<nombre-breve>**: Para errores críticos en main (Ej: `hotfix/caida-bd`)
+
+###  Convenciones de Commits
+Utilizamos la convención de *Conventional Commits* para mantener la trazabilidad:
+   `feat: <descripción>` para nuevas características
+   `fix: <descripción>` para solución de bugs
+   `docs: <descripción>` para cambios en documentación
+   `ci: <descripción>` para cambios en GitHub actions/flujos
+
+###  Flujo de Merge y Estrategias de Revisión
+   **Nunca** se hace push directo a `main` ni a `develop`
+   Todo cambio debe integrarse mediante un **Pull Request (PR)**
+   Antes de aprobar un PR, el código debe pasar exitosamente el pipeline de GitHub Actions (CI) y ser revisado por al menos 1 compañero de equipo 
+
+###  Estructura de Carpetas
+   `.github/workflows/`: Archivos de configuración de GitHub Actions
+   `/`: Archivos de configuración en la raíz (`package.json`, `.gitignore`)
+   `/src/` o raíz: Lógica principal del microservicio (`index.js`)
+
+### Declaración de Uso de Inteligencia Artificial
 En este proyecto se utilizó IA (Google ia Studio) de manera ética como apoyo para estructurar el formato de este documento README.md, recordar comandos de Git y validar la sintaxis básica del archivo YAML para GitHub Actions todas las decisiones técnicas, la creación de las ramas, los commits y la ejecución de los Pull Requests fueron realizadas de forma manual
 Fuente: https://bibliotecas.duoc.cl/ia
 
@@ -53,3 +85,4 @@ En esta etapa del proyecto, utilicé Inteligencia Artificial (Google ia Studio) 
 Fuente: https://bibliotecas.duoc.cl/ia
 
 Para esta segunda evaluación, el mayor desafío fue subirle la complejidad al pipeline. Como seguí trabajando solo, entender cómo empaquetar la aplicación con Docker y luego orquestarla con Docker Compose me costó un poco al principio y tambien integrar la seguridad para que el pipeline se bloqueara automáticamente si encontraba vulnerabilidades fue algo totalmente nuevo para mí. Me apoyé en la Inteligencia Artificial para entender la estructura de los archivos de configuración y no frustrarme con los errores de sintaxis (como el uso de mayúsculas en Dockerfile). Gracias a esto, logré comprender cómo funciona realmente la integración continua, asegurando que el código que llega a producción sea seguro y esté probado
+
