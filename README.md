@@ -92,3 +92,10 @@ Fuente: https://bibliotecas.duoc.cl/ia
 
 Para esta segunda evaluación, el mayor desafío fue subirle la complejidad al pipeline. Como seguí trabajando solo, entender cómo empaquetar la aplicación con Docker y luego orquestarla con Docker Compose me costó un poco al principio y tambien integrar la seguridad para que el pipeline se bloqueara automáticamente si encontraba vulnerabilidades fue algo totalmente nuevo para mí. Me apoyé en la Inteligencia Artificial para entender la estructura de los archivos de configuración y no frustrarme con los errores de sintaxis (como el uso de mayúsculas en Dockerfile). Gracias a esto, logré comprender cómo funciona realmente la integración continua, asegurando que el código que llega a producción sea seguro y esté probado
 
+<img width="919" height="961" alt="imagen" src="https://github.com/user-attachments/assets/698b2d84-2fd9-4f5b-bc74-f9181b909b63" />
+
+<img width="919" height="995" alt="imagen" src="https://github.com/user-attachments/assets/94d04763-3973-4e6e-8c1c-94e301213bde" />
+
+<img width="921" height="1002" alt="imagen" src="https://github.com/user-attachments/assets/10c90f9b-9e08-45ba-b569-5c493347579b" />
+
+<img width="921" height="999" alt="imagen" src="https://github.com/user-attachments/assets/b6b5a536-32e5-4d1e-b922-07208b1e9787" />
