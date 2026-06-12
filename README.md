@@ -99,3 +99,33 @@ Para esta segunda evaluación, el mayor desafío fue subirle la complejidad al p
 <img width="921" height="1002" alt="imagen" src="https://github.com/user-attachments/assets/10c90f9b-9e08-45ba-b569-5c493347579b" />
 
 <img width="921" height="999" alt="imagen" src="https://github.com/user-attachments/assets/b6b5a536-32e5-4d1e-b922-07208b1e9787" />
+
+
+## Actualizacion de Mi microservicio Devops
+## Observabilidad y Entornos Reales (Evaluación 3)
+Para garantizar una operación confiable, transparente y alineada a estándares de calidad, se implementó la siguiente arquitectura:
+
+### 1. Monitoreo y Dashboards (IE1 e IE3)
+*   **Recolección de Métricas:** Se integró la librería `prom-client` en el código de Node.js para habilitar el endpoint `/metrics`, exponiendo datos vitales como uso de CPU, consumo de memoria y tiempos de respuesta
+*   **Visualización:** Se configuró `Prometheus` (como scraper) y `Grafana` (como dashboard) dentro del orquestador `docker-compose.yml`. Esto permite crear paneles personalizados para observar el comportamiento del sistema y detectar anomalías en tiempo real
+
+### 2. Entorno de Kubernetes (IE2)
+*   Se crearon los manifiestos oficiales de orquestación en la carpeta `/k8s/` (`deployment.yaml` y `service.yaml`)
+*   Estos archivos preparan el microservicio para ser desplegado en un cluster real, estableciendo límites estrictos de recursos (`128Mi` a `256Mi` de RAM) para asegurar gobernanza y escalabilidad
+
+### 3. Políticas de Cumplimiento (IE5 e IE6)
+*   **Validación Automatizada:** Se configuró una política de *Branch Protection Rule* en GitHub para la rama `main` 
+*   **Parada de Emergencia:** Se exige que todos los *status checks* (como `build-and-test`) pasen exitosamente antes de permitir un Merge. Como se evidencia en los registros del pipeline, ante cualquier error o falla de seguridad, el proceso se interrumpe y bloquea el paso a producción
+
+
+### Declaración de Uso de Inteligencia Artificial (Evaluación 3):
+En esta etapa final, utilicé Inteligencia Artificial (Google IA Studio) de manera ética como apoyo técnico. La IA me ayudó a estructurar los archivos de configuración para Prometheus y los manifiestos YAML de Kubernetes. También me asistió en la resolución de problemas (troubleshooting) cuando el pipeline presentó errores de sintaxis o fallas de dependencias en GitHub Actions. Todas las decisiones arquitectónicas, validaciones en la plataforma y pruebas fueron ejecutadas manualmente.
+Fuente: https://bibliotecas.duoc.cl/ia
+
+### Reflexión Personal - Evaluación 3
+*Para esta última evaluación, el desafío más grande no fue escribir código, sino conectar las herramientas. Aprender a configurar Prometheus y crear manifiestos de Kubernetes me hizo entender cómo funciona un sistema robusto en la vida real. Lo que más destaco de este proceso fue enfrentarme a los errores del pipeline (como los exit codes) y tener que investigar y aplicar soluciones "en caliente" para destrabarlo. Me apoyé en la Inteligencia Artificial para entender por qué fallaban los comandos en el servidor de GitHub, lo que aceleró mi aprendizaje. Ahora comprendo perfectamente el ciclo completo de DevOps: no solo es subir código, sino monitorearlo, protegerlo y saber cómo reaccionar cuando algo se rompe*
+<img width="923" height="930" alt="Captura de pantalla 2026-06-11 220833" src="https://github.com/user-attachments/assets/b979c1fa-2e48-4672-830e-f4bf69d7b58e" />
+
+<img width="933" height="867" alt="Captura de pantalla 2026-06-11 220643" src="https://github.com/user-attachments/assets/7c92bf81-44b7-4cb6-b7b8-7a92981a50ad" />
+
+<img width="797" height="777" alt="Captura de pantalla 2026-06-11 222039" src="https://github.com/user-attachments/assets/a7f71064-5f10-4160-8ab9-4bc3585c011e" />
