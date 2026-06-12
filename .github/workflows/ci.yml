@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Ejecutar Pruebas Unitarias (IE2)
-        run: npm test
+        run: npx jest
 
       - name: Análisis de Seguridad Básico (IE3)
         run: npm audit --audit-level=critical
